@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Application Tracker
 
-## Getting Started
+A full-stack application for tracking job applications through a Kanban-style workflow. Users can add jobs, move them across stages, update details, and stay organized throughout the job search process.
 
-First, run the development server:
+## Features
+
+- User authentication with Better Auth
+- Personalized dashboard for each user
+- Kanban board with drag-and-drop interactions
+- Add, edit, and delete job applications
+- Track company, position, location, salary, notes, URL, and tags
+- MongoDB persistence with Mongoose
+- Responsive UI built with Next.js and Tailwind CSS
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- @dnd-kit for drag-and-drop interactions
+- MongoDB + Mongoose
+- Better Auth
+
+## Project Structure
+
+```bash
+my-app/
+├── app/
+│   ├── api/
+│   ├── dashboard/
+│   ├── sign-in/
+│   └── sign-up/
+├── components/
+│   ├── ui/
+│   ├── kanban-board.tsx
+│   ├── job-application-card.tsx
+│   ├── create-job-dialog.tsx
+│   └── navbar.tsx
+├── lib/
+│   ├── actions/
+│   ├── auth/
+│   ├── hooks/
+│   ├── models/
+│   ├── db.ts
+│   └── utils.ts
+├── public/
+├── scripts/
+├── .env
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
+```
+
+## Prerequisites
+
+Before running the project, make sure you have:
+
+- Node.js 18+
+- MongoDB installed locally or access to a MongoDB connection string
+- A `.env` file with the required environment variables
+
+## Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/job-app-tracker
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+If using MongoDB Atlas or another hosted database, replace the URI with your connection string.
+
+## Installation
+
+```bash
+npm install
+```
+
+## Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Database Setup
 
-## Learn More
+This project uses MongoDB and Mongoose. The application connects to the database and initializes the default board for each user during authentication.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Sign up or log in.
+2. Open the dashboard.
+3. Add a new job application.
+4. Drag jobs between stages on the Kanban board.
+5. Edit or delete job cards as needed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+This project is a strong portfolio application because it combines:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- full-stack development
+- authentication and user-specific data
+- modern dashboard UI
+- drag-and-drop interactions
+- database-backed persistence
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is intended for educational and portfolio use.
